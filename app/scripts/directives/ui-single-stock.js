@@ -10,7 +10,7 @@ stockpocApp.directive('uiSingleStock', function () {
                 var code = (e.keyCode ? e.keyCode : e.which);
                 if(code == 13) {
                     scope.$apply(function() {
-                        scope.onTypeheadKeyup();
+                        scope.onPressEnter();
                     });
                 }
             });

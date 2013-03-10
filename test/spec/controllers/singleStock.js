@@ -14,10 +14,11 @@ describe('Controller: SingleStockCtrl', function () {
 
 
     // Initialize the controller and a mock scope
-    beforeEach(inject(function ($controller) {
+    beforeEach(inject(function ($controller, _$httpBackend_) {
         scope = {};
         scope.$watch = function (){
         } ;
+        _$httpBackend_.expectJSONP(/.*/).respond({}); //ignore setup mock http service
         SingleStockCtrl = $controller('SingleStockCtrl', {
             $scope: scope
         });
@@ -49,7 +50,7 @@ describe('Controller: SingleStockCtrl', function () {
         scope.selectedSymbol = 'h';
         scope.typeHeaderOptions = mockSymbolOptions;
         expect(scope.showAutoComplete()).toBe(true);
-        scope.onTypeheadKeyup({});
+        scope.onPressEnter();
         expect(scope.showAutoComplete()).toBe(false);
     });
 

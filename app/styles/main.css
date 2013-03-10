@@ -11,3 +11,30 @@
 .th-parent .dropdown-menu.active{
     display: block;
 }
+
+.stockPanel{
+    width: 400px;
+}
+
+div.quote{
+    padding: 0;
+    margin: 0;
+}
+
+.quote .name{
+    font-size: 5.0ex;
+}
+
+.quote .price{
+    font: bold;
+    font-size: 4.5ex;
+}
+
+.quote .time{
+    font-size: 1.5ex;
+}
+
+.quote .last-change {
+    padding-left: 10px;
+}
+
