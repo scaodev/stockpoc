@@ -16,10 +16,16 @@ stockpocApp.controller('SingleStockCtrl', ['$scope', 'symbolService', 'stockServ
                     $scope.quoteError = data.error.description;
                     $scope.quote = null;
                 }else{
-                    $scope.quoteError = null;
-                    var d = Date.parse(data.query.created);
-                    $scope.quote = data.query.results.quote;
-                    $scope.lastUpdateTime = new Date(d).toLocaleString();
+
+                    if(data.query.results.quote) {
+                        $scope.quote = data.query.results.quote;
+                        $scope.quoteError = null;
+                        console.log($scope.quote);
+                        var d = Date.parse(data.query.created);
+                        $scope.lastUpdateTime = new Date(d).toLocaleString();
+                    }else{
+                        $scope.quoteError = "Can't find quote for symbol " + symbol;
+                    }
                 }
             })
         };

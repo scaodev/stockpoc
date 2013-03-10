@@ -1,6 +1,6 @@
 <div class="stockPanel">
     <div class="th-parent">
-        <input type="text" type-head-input class="span3" ng-model='selectedSymbol'>
+        Symbol: <input type="text" type-head-input class="span3" ng-model='selectedSymbol'>
         <ul class="typeahead dropdown-menu" ng-class="{active: showAutoComplete()}">
             <li ng-repeat='option in typeHeaderOptions'>
                 <a ng-click='typeHeadOptionClick(option)'>SYMBOL:{{option.symbol}} --- NAME: {{option.name}}</a>
@@ -14,5 +14,7 @@
             <span class="price">{{quote.LastTradePriceOnly}}</span><span class='last-change'>{{quote.Change}}</span>
         </div>
     </div>
-    <div ng-show=""
+    <div ng-show="quoteError">
+        <p>{{quoteError}}</p>
+    </div>
 </div>
