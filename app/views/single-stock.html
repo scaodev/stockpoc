@@ -2,7 +2,9 @@
     <div class="th-parent">
         <input type="text" type-head-input class="span3" ng-model='selectedSymbol'>
         <ul class="typeahead dropdown-menu" ng-class="{active: showAutoComplete()}">
-            <li>Hello</li>
+            <li ng-repeat='option in typeHeaderOptions'>
+                <a ng-click='typeHeadOptionClick(option)'>SYMBOL:{{option.symbol}} --- NAME: {{option.name}}</a>
+            </li>
         </ul>
     </div>
 </div>

@@ -16,6 +16,8 @@ describe('Controller: SingleStockCtrl', function () {
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($controller) {
         scope = {};
+        scope.$watch = function (){
+        } ;
         SingleStockCtrl = $controller('SingleStockCtrl', {
             $scope: scope
         });

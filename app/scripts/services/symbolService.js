@@ -1,7 +1,7 @@
 'use strict';
-
+var YAHOO = {};
 stockpocApp.factory('symbolService', ['$http', function ($http) {
-    var YAHOO = {}, listCallback,
+    var listCallback,
         query = 'http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=:query&callback=YAHOO.Finance.SymbolSuggest.ssCallback';
     YAHOO.Finance = {};
     YAHOO.Finance.SymbolSuggest = {};
