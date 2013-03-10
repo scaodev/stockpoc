@@ -1,1 +1,13 @@
-/* Will be compiled down to a single stylesheet with your sass files */
+.th-parent{
+    position: relative;
+}
+
+.th-parent .dropdown-menu{
+    top: 30px;
+    left: 0;
+    width: auto;
+}
+
+.th-parent .dropdown-menu.active{
+    display: block;
+}
