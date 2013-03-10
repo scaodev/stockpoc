@@ -20,7 +20,6 @@ stockpocApp.controller('SingleStockCtrl', ['$scope', 'symbolService', 'stockServ
                     if(data.query.results.quote) {
                         $scope.quote = data.query.results.quote;
                         $scope.quoteError = null;
-                        console.log($scope.quote);
                         var d = Date.parse(data.query.created);
                         $scope.lastUpdateTime = new Date(d).toLocaleString();
                     }else{
